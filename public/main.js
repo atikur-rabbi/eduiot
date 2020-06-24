@@ -1,4 +1,6 @@
-const peerconfig = {
+const peerconfig = {host:'peerjs-server.herokuapp.com', secure:true, port:443, key: '/peerjs',debug: 3};
+
+/*{
   host: location.hostname,
   port: location.port || (location.protocol === 'https:' ? 443 : 80),
   secure:true, 
@@ -6,7 +8,7 @@ const peerconfig = {
   path: '/peerjs',
   debug: 3
 };
-
+*/
 const joinChat = async () => {
   const peer = new Peer('sender', peerconfig)
 
