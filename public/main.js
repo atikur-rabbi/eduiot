@@ -1,23 +1,8 @@
-const peerconfig = {host:'localhost', port:9000, key: 'peerjs', path: '/peerjs',debug: 3};
+const peerconfig = {host: location.hostname, port: location.port || (location.protocol === 'https:' ? 443 : 80), key: 'peerjs', path: '/peerjs',debug: 3};
+
 const joinChat = async () => {
     const peer = new Peer('sender', peerconfig)
 
-    /*
-    {host:'localhost', port:9000, key: '/peerjs',debug: 3};
-    {host:'peerjs-server.herokuapp.com', secure:true, port:443, key: '/peerjs',debug: 3};
-    {host:'wepeer.herokuapp.com', secure:true, port:443,  debug: 3};
-    {
-     // host:'peerjs-server.herokuapp.com', secure:true, port:443, key: '/peerjs',debug: 3
-       
-       host:'wepeer.herokuapp.com', secure:true, port:443,  debug: 3
-      }
-
-    const conn = peer.connect('receiver')
-    
-    conn.on('open', () => {
-      conn.send('hi!')
-    })
-    */
     const localStream = await navigator.mediaDevices.getUserMedia({
         video: true
     })
