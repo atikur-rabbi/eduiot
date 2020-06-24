@@ -20,10 +20,10 @@ var srv = app.listen(PORT, function () {
 peerServer = ExpressPeerServer(srv, {
    // path: '/peerjs',
     debug: true, key: 'peerjs', //,  secure:true,
-    ssl: {
-        key: fs.readFileSync('./../certificates/key.pem', 'utf8'),
-        cert: fs.readFileSync('./../certificates/cert.pem', 'utf8')
-    }
+    // ssl: {
+    //     key: fs.readFileSync('./../certificates/key.pem', 'utf8'),
+    //     cert: fs.readFileSync('./../certificates/cert.pem', 'utf8')
+    // }
 });
 app.use('/peerjs', peerServer);
 
