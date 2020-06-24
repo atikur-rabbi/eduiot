@@ -18,7 +18,7 @@ var srv = app.listen(PORT, function () {
 })
 
 peerServer = ExpressPeerServer(srv, {
-	debug: true, key: 'peerjs',
+	debug: true, key: 'peerjs', secure:true,
 });
 app.use('/peerjs', peerServer);
 
