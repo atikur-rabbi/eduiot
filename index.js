@@ -13,10 +13,6 @@ const PORT = process.env.PORT || 80;
 
 app.use(express.static('./public'));
 
-app.get('/.well-known/pki-validation/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/40AF60E35A88470B9E6DE61B7BC5E2E4.txt'));
-});
-
 var srv = app.listen(PORT, function () {
     console.log('Listening on ' + PORT)
 })
