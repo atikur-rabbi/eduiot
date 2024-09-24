@@ -1,32 +1,32 @@
-// npm install --save peer
-// const port = process.env.PORT || 9000,
-// const { PeerServer } = require('peer');
+// // npm install --save peer
+// // const port = process.env.PORT || 9000,
+// // const { PeerServer } = require('peer');
 
-// const peerServer = PeerServer({ port: process.env.PORT || 9000,key: 'peerjs', path: '/peerjs' });
-
-
-var express = require('express');
-var app = express();
-var ExpressPeerServer = require('peer').ExpressPeerServer;
-
-const PORT = process.env.PORT || 80;
-
-app.use(express.static('./public'));
-
-var srv = app.listen(PORT, function () {
-    console.log('Listening on ' + PORT)
-})
+// // const peerServer = PeerServer({ port: process.env.PORT || 9000,key: 'peerjs', path: '/peerjs' });
 
 
-peerServer = ExpressPeerServer(srv, {
-   // path: '/peerjs',
-    debug: true, key: 'peerjs', //,  secure:true,
-    // ssl: {
-    //     key: fs.readFileSync('./../certificates/key.pem', 'utf8'),
-    //     cert: fs.readFileSync('./../certificates/cert.pem', 'utf8')
-    // }
-});
-app.use('/peerjs', peerServer);
+// var express = require('express');
+// var app = express();
+// var ExpressPeerServer = require('peer').ExpressPeerServer;
+
+// const PORT = process.env.PORT || 80;
+
+// app.use(express.static('./public'));
+
+// var srv = app.listen(PORT, function () {
+//     console.log('Listening on ' + PORT)
+// })
+
+
+// peerServer = ExpressPeerServer(srv, {
+//    // path: '/peerjs',
+//     debug: true, key: 'peerjs', //,  secure:true,
+//     // ssl: {
+//     //     key: fs.readFileSync('./../certificates/key.pem', 'utf8'),
+//     //     cert: fs.readFileSync('./../certificates/cert.pem', 'utf8')
+//     // }
+// });
+// app.use('/peerjs', peerServer);
 
 
 // peerServer.on('connection', function(id) {
@@ -60,3 +60,10 @@ app.use('/peerjs', peerServer);
 // app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
+var http = require('http');
+var port = process.env.PORT || 9000,
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('Hello World!'); //write a response to the client
+  res.end(); //end the response
+}).listen(port);
