@@ -61,7 +61,7 @@
 // app.use(express.static(path.join(__dirname, 'public')));
 
 var http = require('http');
-var port = process.env.PORT || 9000,
+var port = process.env.PORT || 9000;
 //create a server object:
 http.createServer(function (req, res) {
   res.write('Hello World!'); //write a response to the client
